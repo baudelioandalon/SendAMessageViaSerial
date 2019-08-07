@@ -1,10 +1,8 @@
 #include <Arduino.h>
 
 String mensaje = "";
-
 int verificado = 0;
 String Temp = "";
-String om = "";
 
 void setup() {
   Serial.begin(9600);
@@ -14,17 +12,25 @@ void setup() {
 void loop() {
   
    while(Serial.available() > 0){
-    
     char recibido = Serial.read();
-    om = recibido;
-    mensaje = Temp + om;
+    mensaje = Temp + recibido;
     Temp = mensaje;
     mensaje = "";
-    Serial.println(Temp + " con tamaño de: " + Temp.length());
     delay(50);
    }
    if(Temp.length() == 5){
-    Serial.println("ENTRO");
+//    Serial.println(Temp);
+
+     Temp.trim();
+    if(Temp.equals("HOLA")){
+      Serial.println("ENTRO");
+    }else{
+      Serial.println("ERROR");
+      Temp = "";
+    }
+    Temp = "";
+   }
+   else{
     Temp = "";
    }
 
