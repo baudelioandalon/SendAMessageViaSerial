@@ -5,8 +5,10 @@ String mensaje = "";
 String Temp = "";
 
 //MESSAGE
-String message = "HOLA"; // Replace instead for your message
+String message = "OrdenNuevo"; // Replace instead for your message
 int sizeOfMessage = message.length();
+
+//CA
 
 void setup() {
   Serial.begin(9600);
