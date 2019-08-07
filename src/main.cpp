@@ -5,6 +5,7 @@ String mensaje = "";
 int verificado = 0;
 String Temp = "";
 String om = "";
+
 void setup() {
   Serial.begin(9600);
 
