@@ -80,21 +80,21 @@ void loop() {
 
                 if(Temp2.length() == sizeOfMessage2){
                   
-                  Serial.println("MOVIMIENTO 1: " + Temp2.substring(0,1));
+                  Serial.println("MOVIMIENTO 1: " + Temp2.substring(0,2));
                   Serial.println("MOVIMIENTO 2: " + Temp2.substring(2,4));
                   Serial.println("MOVIMIENTO 3: " + Temp2.substring(4,6));
 
-                  if(isNumeric(Temp2.substring(0,2)) || 
-                  isNumeric(Temp2.substring(2,4)) || 
+                  if(isNumeric(Temp2.substring(0,2)) && 
+                  isNumeric(Temp2.substring(2,4)) && 
                   Temp2.substring(4,6)){
                     //CONTINUAR
                     Serial.println("CONTINUAR");
+                    break;
                   }else{
                     Serial.println("NO NUMERO");
+                    
                   }
-                  
                   Temp2 = "";
-                  break;
                 }
                 else{
                   Serial.println("Error, reenviar cantidad de movimientos");
