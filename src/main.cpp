@@ -65,7 +65,7 @@ void loop() {
                   Temp2 = mensaje2;
                   //STEP 4: Preparing the variables, for the other Byte (Cleaning)
                   mensaje2 = "";
-                  //STEP 5: Wait 50 Milli Seconds ITS NECESSARY
+                  //STEP 5: Wait 50 Milli Seconds ** ITS NECESSARY **
                   delay(50);
                   //STEP 6: Quit blank space and car return
                   Temp2.trim();
@@ -88,16 +88,15 @@ void loop() {
                   isNumeric(Temp2.substring(2,4)) && 
                   isNumeric(Temp2.substring(4,6))){
                     //CONTINUAR
-                    Serial.println("CONTINUAR");
+                    Serial.println("CONTINUAR"); // SIZE = 9
                     break;
                   }else{
-                    Serial.println("NO NUMERO");
-                    
+                    Serial.println("NONUMERO"); //SIZE  = 8
                   }
                   Temp2 = "";
                 }
                 else{
-                  Serial.println("Error, reenviar cantidad de movimientos");
+                  Serial.println("REENVIARCANTIDAD"); // SIZE = 16
                 }
 
               }//fin while loop
