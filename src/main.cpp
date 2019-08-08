@@ -22,7 +22,7 @@ int Mov1 = 0;
 int Mov2 = 0;
 int Mov3 = 0;
 
-int charecito = 0;
+int NextStep = 0;
 
 // String INICIO
 
@@ -52,7 +52,7 @@ void loop() {
       if(Temp.length() == sizeOfMessage){
         
           if(Temp.equals(message)){
-              Serial.println("CORRECT");
+              Serial.println("CORRECT"); // SIZE = 7
               Serial.println("Esperando...");
               while(10>0){//inicio while loop
               while(10>0){//inicio while loop2
@@ -80,16 +80,21 @@ void loop() {
 
                 if(Temp2.length() == sizeOfMessage2){
                   
-                  Serial.println("MOVIMIENTO 1: " + Temp2.substring(0,2));
-                  Serial.println("MOVIMIENTO 2: " + Temp2.substring(2,4));
-                  Serial.println("MOVIMIENTO 3: " + Temp2.substring(4,6));
+                  // Serial.println("MOVIMIENTO 1: " + Temp2.substring(0,2));
+                  // Serial.println("MOVIMIENTO 2: " + Temp2.substring(2,4));
+                  // Serial.println("MOVIMIENTO 3: " + Temp2.substring(4,6));
+                  Mov1 = Temp2.substring(0,2).toInt();
+                  Mov2 = Temp2.substring(2,4).toInt();
+                  Mov3 = Temp2.substring(4,6).toInt();
 
                   if(isNumeric(Temp2.substring(0,2))  && 
                   isNumeric(Temp2.substring(2,4)) && 
                   isNumeric(Temp2.substring(4,6))){
                     //CONTINUAR
                     Serial.println("CONTINUAR"); // SIZE = 9
+                    NextStep = 1;
                     break;
+
                   }else{
                     Serial.println("NONUMERO"); //SIZE  = 8
                   }
@@ -110,6 +115,14 @@ void loop() {
       else{
 //        Serial.println("ERROR");
           Temp = "";
+      }
+
+      if(NextStep == 1){
+        if(Mov1 >0){
+          
+        }
+      }else if(NextStep == 0){
+
       }
 
 }//fin loop
