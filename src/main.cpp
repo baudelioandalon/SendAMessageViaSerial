@@ -85,9 +85,10 @@ void loop() {
                   Serial.println("MOVIMIENTO 3: " + Temp2.substring(4,6));
 
                   if(isNumeric(Temp2.substring(0,2)) || 
-                  isNumeric(Temp2.substring(2,4) || 
+                  isNumeric(Temp2.substring(2,4)) || 
                   Temp2.substring(4,6)){
                     //CONTINUAR
+                    Serial.println("CONTINUAR");
                   }else{
                     Serial.println("NO NUMERO");
                   }
